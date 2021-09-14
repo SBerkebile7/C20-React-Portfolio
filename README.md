@@ -2,6 +2,9 @@
 
 =======
 
+## Screenshot
+![alt text](https://github.com/SBerkebile7/C20-React-Portfolio/blob/main/src/assets/img/assignment-20.jpg)
+
 ## Purpose
 My personal portfolio, showcasing some of my recent projects and assignments for class.
 
