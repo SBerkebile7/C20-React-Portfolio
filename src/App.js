@@ -1,5 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import './assets/css/bootstrap.min.css';
+import './assets/css/bootstrap-theme.min.css';
+import './assets/css/fontAwesome.css';
+import './assets/css/tooplate-style.css';
+
 
 import Nav from './components/Nav';
 import About from './components/About';
