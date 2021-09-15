@@ -12,8 +12,6 @@ My personal portfolio, showcasing some of my recent projects and assignments for
 * JS
 * React
 * Node
-* React
-* Node
 
 ## GitHub Repository
 https://github.com/SBerkebile7/C20-React-Portfolio
