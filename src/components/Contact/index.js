@@ -2,21 +2,21 @@ import React, { useState } from 'react';
 
 import { validateEmail } from '../../utils/helpers';
 
+const FORM_ENDPOINT = "https://public.herotofu.com/v1/f8e682c0-4261-11ec-ac2c-7b06ec3fa335";
+
 require('dotenv').config();
 
 function ContactForm() {
     const [formState, setFormState] = useState({ name: '', email: '', message: '' });
 
     const [errorMessage, setErrorMessage] = useState('');
-    const { name, email, message } = formState;
 
-    const nodemailer = require('nodemailer');
-
-    
+    const [submitted, setSubmitted] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!errorMessage) {
+            setSubmitted(true);
             console.log('Submit Form', formState);
         }
     };
@@ -42,28 +42,14 @@ function ContactForm() {
         }
     };
 
-    // let transporter = nodemailer.createTransport({
-    //     service: 'yahoo',
-    //     auth: {
-    //         user: process.env.FROMEMAIL,
-    //         pass: process.env.PASSWORD
-    //     }
-    // })
-
-    // let mailOptions = {
-    //     from: process.env.FROMEMAIL,
-    //     to: process.env.TOEMAIL,
-    //     subject: 'Portfolio page message',
-    //     text: message
-    // }
-
-    transporter.sendMail(mailOptions, function(err, data) {
-        if(err) {
-            console.log("Error occurred");
-        } else {
-            console.log("Email sent!")
-        }
-    })
+    if (submitted) {
+        return (
+          <>
+            <h2>Thank you!</h2>
+            <div>We'll be in touch soon.</div>
+          </>
+        );
+      }
 
     return (
         <div>
@@ -88,26 +74,18 @@ function ContactForm() {
                     <div class="col-md-8">
                         <div class="right-content">
                             <div id="contact">
-                            <form action="#" method="post" onSubmit={handleSubmit}>
+                            <form action={FORM_ENDPOINT} method="POST" onSubmit={handleSubmit} target="_blank">
                                 <div class="col-md-4 col-md-offset-2">
-                                    <fieldset>
-                                        <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="" onBlur={handleChange} />
-                                    </fieldset>
+                                    <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required onBlur={handleChange} />
                                 </div>
                                 <div class="col-md-4">
-                                    <fieldset>
-                                        <input name="email" type="text" class="form-control" id="email" placeholder="Email..." required="" onBlur={handleChange} />
-                                    </fieldset>
+                                    <input name="email" type="email" class="form-control" id="email" placeholder="Email..." required onBlur={handleChange} />
                                 </div>
                                 <div class="col-md-8 col-md-offset-2">
-                                    <fieldset>
-                                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required="" onBlur={handleChange} ></textarea>
-                                </fieldset>
+                                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required onBlur={handleChange} ></textarea>
                                 </div>
                                 <div class="col-md-8 col-md-offset-2">
-                                    <fieldset>
-                                        <button type="submit" id="form-submit" class="btn">Send Message</button>
-                                    </fieldset>
+                                   <button type="submit" id="form-submit" class="btn">Send Message</button>
                                 </div> 
                                 {errorMessage && (
                                     <div>
