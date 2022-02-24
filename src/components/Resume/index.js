@@ -23,7 +23,6 @@ function Resume() {
                                     <li>CSS</li>
                                     <li>Bulma</li>
                                     <li>Bootstrap</li>
-                                    <li></li>
                                 </ul>
                             </div>
                         </div>

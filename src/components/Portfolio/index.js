@@ -3,6 +3,7 @@ import project1 from '../../assets/img/project-1.jpg'
 import project2 from '../../assets/img/project-2.JPG'
 import assignment21 from '../../assets/img/assignment-21.jpg'
 import assignment14  from '../../assets/img/assignment-14.jpg'
+import theBreadSite from '../../assets/img/the-bread-site.jpg'
 
 function Portfolio() {
     return (
@@ -18,6 +19,22 @@ function Portfolio() {
             <div class="left-right-image">
                 <div class="container">
                     <div class="col-md-8 col-md-offset-2">
+                        <div class="left-image">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="image">
+                                        <a href="https://the-bread-site.vercel.app/" target='_blank' rel="noreferrer"><img src={theBreadSite} alt="" /></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <h2 class="hidden-sm hidden-xs">The Breadsite</h2>
+                                    <h2 class="hidden-lg hidden-md">The Breadsite</h2>
+                                    <span>Personal blog to document my journey in baking.</span>
+                                    <p>This app uses JavaScript and Next.js to create a personal blog that I try to post my recipes to.</p> <br /> 
+                                    <p>Users who visit the site are able to leave comments on posts created, as well as cycle between posts by category.</p>
+                                </div>
+                            </div>
+                        </div>
                         <div class="right-image">
                             <div class="row">
                                 <div class="col-md-6">
